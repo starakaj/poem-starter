@@ -2,6 +2,7 @@
 
 // init project
 const express = require('express');
+const { makePoem } = require("./poem/poem");
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -25,6 +26,11 @@ app.use(express.static('public'));
 // http://expressjs.com/en/starter/basic-routing.html
 app.get("/", function(request, response) {
   response.sendFile(__dirname + '/app/index.html');
+});
+
+app.get("/poem", async function(_, response) {
+  const lines = await makePoem();
+  response.json(lines);
 });
 
 // listen for requests :)

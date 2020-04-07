@@ -1,15 +1,13 @@
 const React = require("react");
-const ClockFace = require("./ClockFace");
+const PoemDisplay = require("./PoemDisplay");
 
 /* the main page for the index route of this app */
 const RootComponent = function() {
   return (
     <div>
-      <h1>Hello!</h1>
+      <h1>Automatic Poem Generator</h1>
 
-      <p>Your app here</p>
-
-      <ClockFace language="fr" />
+      <PoemDisplay />
     </div>
   );
 }
