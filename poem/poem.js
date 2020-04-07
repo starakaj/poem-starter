@@ -6,7 +6,7 @@ async function makePoem() {
 }
 
 if (require.main === module) {
-    makePoem.then(res => console.log(res));
+    makePoem().then(res => console.log(res));
 }
 
 module.exports = {
